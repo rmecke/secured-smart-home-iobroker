@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  iobroker:
+    container_name: iobroker
+    image: buanet/iobroker
+    hostname: iobroker
+    restart: always
+    ports:
+      - "8081:8081"
+      - "8087:8087"
+      - "1883:1883"
+    volumes:
+      - ./iobrokerdata:/opt/iobroker
+      - ./startup:/opt/userscripts
+  wireguard:
+    image: linuxserver/wireguard
+    container_name: wireguard
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - ./vpn_config:/config
+    ports:
+      - 51820:51820
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+    restart: unless-stopped

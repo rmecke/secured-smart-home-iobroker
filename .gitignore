@@ -1,1 +1,8 @@
-iobrokerdata
+iobrokerdata/.npm
+iobrokerdata/backups
+iobrokerdata/log
+iobrokerdata/node_modules
+iobrokerdata/iobroker-data/backup-objects
+iobrokerdata/iob
+iobrokerdata/iobroker
+iobrokerdata/iobroker.bak

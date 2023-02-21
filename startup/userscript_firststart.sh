@@ -10,7 +10,7 @@
 #echo ' '
 
 
-sudo iobroker add simple-api
-sudo iobroker add mqtt
+#sudo iobroker add simple-api
+#sudo iobroker add mqtt
 
 exit 0

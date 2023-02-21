@@ -12439,3 +12439,86 @@
 2023-02-21 14:52:51.630  - [32minfo[39m: host.79d2a11ea293 instance system.adapter.mqtt.0 terminated with code 11 (ADAPTER_REQUESTED_TERMINATION)
 2023-02-21 14:52:51.631  - [32minfo[39m: host.79d2a11ea293 All instances are stopped.
 2023-02-21 14:52:51.822  - [32minfo[39m: host.79d2a11ea293 terminated
+2023-02-21 16:43:58.470  - [32minfo[39m: host.2dca39cdebb5 iobroker.js-controller version 4.0.23 js-controller starting
+2023-02-21 16:43:58.473  - [32minfo[39m: host.2dca39cdebb5 Copyright (c) 2014-2022 bluefox, 2014 hobbyquaker
+2023-02-21 16:43:58.473  - [32minfo[39m: host.2dca39cdebb5 hostname: 2dca39cdebb5, node: v16.19.1
+2023-02-21 16:43:58.473  - [32minfo[39m: host.2dca39cdebb5 ip addresses: 10.13.13.2 172.18.0.2
+2023-02-21 16:43:59.076  - [32minfo[39m: host.2dca39cdebb5 connected to Objects and States
+2023-02-21 16:43:59.094  - [32minfo[39m: host.2dca39cdebb5 added notifications configuration of host
+2023-02-21 16:43:59.096  - [32minfo[39m: host.2dca39cdebb5 Node.js version has changed from unknown to 16.19.1
+2023-02-21 16:44:01.856  - [32minfo[39m: host.2dca39cdebb5 Successfully updated capabilities "cap_net_admin, cap_net_bind_service, cap_net_raw" for /usr/bin/node
+2023-02-21 16:44:01.866  - [32minfo[39m: host.2dca39cdebb5 Delete host system.host.2dca39cdebb5
+2023-02-21 16:44:01.878  - [32minfo[39m: host.2dca39cdebb5 Delete state "system.host.2dca39cdebb5.versions.nodeCurrent"
+2023-02-21 16:44:01.880  - [32minfo[39m: host.2dca39cdebb5 6 instances found
+2023-02-21 16:44:01.887  - [32minfo[39m: host.2dca39cdebb5 starting 6 instances
+2023-02-21 16:44:01.974  - [32minfo[39m: host.2dca39cdebb5 instance system.adapter.admin.0 started with pid 603
+2023-02-21 16:44:02.007  - [32minfo[39m: host.2dca39cdebb5 Delete state "system.host.2dca39cdebb5.versions.nodeNewest"
+2023-02-21 16:44:02.012  - [32minfo[39m: host.2dca39cdebb5 Delete state "system.host.2dca39cdebb5.versions.nodeNewestNext"
+2023-02-21 16:44:02.015  - [32minfo[39m: host.2dca39cdebb5 Delete state "system.host.2dca39cdebb5.versions.npmCurrent"
+2023-02-21 16:44:02.019  - [32minfo[39m: host.2dca39cdebb5 Delete state "system.host.2dca39cdebb5.versions.npmNewest"
+2023-02-21 16:44:02.022  - [32minfo[39m: host.2dca39cdebb5 Delete state "system.host.2dca39cdebb5.versions.npmNewestNext"
+2023-02-21 16:44:02.025  - [32minfo[39m: host.2dca39cdebb5 Some obsolete host states deleted.
+2023-02-21 16:44:05.940  - [32minfo[39m: host.2dca39cdebb5 instance system.adapter.mqtt.0 started with pid 610
+2023-02-21 16:44:09.976  - [32minfo[39m: host.2dca39cdebb5 instance system.adapter.discovery.0 started with pid 630
+2023-02-21 16:44:13.963  - [32minfo[39m: host.2dca39cdebb5 instance system.adapter.backitup.0 started with pid 637
+2023-02-21 16:44:17.959  - [32minfo[39m: host.2dca39cdebb5 instance system.adapter.simple-api.0 started with pid 644
+2023-02-21 16:44:21.957  - [32minfo[39m: host.2dca39cdebb5 instance system.adapter.myq.0 started with pid 651
+2023-02-21 16:44:31.486  - [32minfo[39m: mqtt.0 (610) starting. Version 4.0.7 in /opt/iobroker/node_modules/iobroker.mqtt, node: v16.19.1, js-controller: 4.0.23
+2023-02-21 16:44:32.828  - [32minfo[39m: admin.0 (603) starting. Version 6.3.5 in /opt/iobroker/node_modules/iobroker.admin, node: v16.19.1, js-controller: 4.0.23
+2023-02-21 16:44:32.851  - [32minfo[39m: admin.0 (603) requesting all states
+2023-02-21 16:44:32.852  - [32minfo[39m: admin.0 (603) requesting all objects
+2023-02-21 16:44:33.141  - [32minfo[39m: admin.0 (603) received all objects
+2023-02-21 16:44:34.751  - [32minfo[39m: admin.0 (603) Request actual repository...
+2023-02-21 16:44:34.770  - [32minfo[39m: admin.0 (603) http server listening on port 8081
+2023-02-21 16:44:34.770  - [32minfo[39m: admin.0 (603) Use link "http://localhost:8081" to configure.
+2023-02-21 16:44:34.776  - [32minfo[39m: admin.0 (603) socket.io server listening on port 8081
+2023-02-21 16:44:35.584  - [32minfo[39m: mqtt.0 (610) Starting MQTT server on 0.0.0.0:1883
+2023-02-21 16:44:36.672  - [32minfo[39m: host.2dca39cdebb5 Updating repository "stable" under "http://download.iobroker.net/sources-dist.json"
+2023-02-21 16:44:37.893  - [32minfo[39m: admin.0 (603) failed connection to socket.io from ::ffff:172.18.0.1: Passport was not initialized
+2023-02-21 16:44:38.989  - [32minfo[39m: admin.0 (603) Repository received successfully.
+2023-02-21 16:44:41.390  - [32minfo[39m: discovery.0 (630) starting. Version 3.1.0 in /opt/iobroker/node_modules/iobroker.discovery, node: v16.19.1, js-controller: 4.0.23
+2023-02-21 16:44:44.582  - [32minfo[39m: backitup.0 (637) starting. Version 2.5.10 in /opt/iobroker/node_modules/iobroker.backitup, node: v16.19.1, js-controller: 4.0.23
+2023-02-21 16:44:45.895  - [32minfo[39m: backitup.0 (637) [iobroker] backup was activated at 02:40 every 1 day(s)
+2023-02-21 16:44:47.342  - [32minfo[39m: simple-api.0 (644) starting. Version 2.7.2 in /opt/iobroker/node_modules/iobroker.simple-api, node: v16.19.1, js-controller: 4.0.23
+2023-02-21 16:44:47.362  - [32minfo[39m: simple-api.0 (644) simpleAPI server listening on port 8087
+2023-02-21 16:44:47.363  - [32minfo[39m: simple-api.0 (644) Allow states only when user is owner: false
+2023-02-21 16:44:47.367  - [32minfo[39m: simple-api.0 (644) http server listening on port 8087
+2023-02-21 16:44:49.649  - [32minfo[39m: myq.0 (651) starting. Version 0.3.1 (non-npm: StrathCole/ioBroker.myq#c4fc36e4d68fade7dbf8c46cfe5a35fe40d003a7) in /opt/iobroker/node_modules/iobroker.myq, node: v16.19.1, js-controller: 4.0.23
+2023-02-21 16:44:49.661  - [32minfo[39m: myq.0 (651) [START] Starting myq adapter
+2023-02-21 16:44:49.666  - [32minfo[39m: myq.0 (651) [INFO] Configured polling interval: 10000
+2023-02-21 16:44:51.107  - [32minfo[39m: admin.0 (603) ==> Connected system.user.admin from ::ffff:172.18.0.1
+2023-02-21 16:44:52.459  - [32minfo[39m: myq.0 (651) myQ API: Successfully connected to the myQ API.
+2023-02-21 16:44:53.848  - [32minfo[39m: myq.0 (651) myQ API: Discovered device family %s: %s.
+2023-02-21 16:44:53.848  - [32minfo[39m: myq.0 (651) myQ API: Discovered device family %s: %s.
+2023-02-21 16:44:54.817  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:44:58.837  - [32minfo[39m: admin.0 (603) ==> Connected system.user.admin from ::ffff:172.18.0.1
+2023-02-21 16:45:05.478  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:45:16.398  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:45:27.379  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:45:38.388  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:45:49.218  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:46:00.018  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:46:11.057  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:46:21.957  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:46:32.850  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:46:43.967  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:46:54.968  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:47:05.940  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:47:16.867  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:47:27.858  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:47:38.817  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:47:49.847  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:48:00.777  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:48:11.747  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:48:22.747  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:48:33.627  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:48:44.631  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:48:55.697  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:49:06.588  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:49:17.398  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:49:28.297  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:49:39.338  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:49:50.113  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:50:00.905  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:50:11.991  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 
+2023-02-21 16:50:22.988  - [32minfo[39m: myq.0 (651) State value to set for "myq.0.devices.GW8100004FAE.info.physical_devices" has to be type "number" but received type "object" 

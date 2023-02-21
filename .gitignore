@@ -1,4 +1,2 @@
-iobrokerdata/.npm
-iobrokerdata/node_modules
-iobrokerdata/iob
-iobrokerdata/iobroker.current.log
+iobrokerdata/*
+!iobrokerdata/backups/

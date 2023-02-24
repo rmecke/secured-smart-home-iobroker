@@ -6,14 +6,19 @@
     "auditLog": "/opt/iobroker/log/iobroker-audit.json",
     "files": [
         {
-            "date": 1676904836095,
-            "name": "/opt/iobroker/log/iobroker.2023-02-20.log",
-            "hash": "7226ae2199fce3ad9b0e3fce3d77178ee9e6e298d9bdcc0405442904e4e20386"
+            "date": 1677003711144,
+            "name": "/opt/iobroker/log/iobroker.2023-02-21.log",
+            "hash": "5bc03ae9af51d923e60b8a391fc8058e1eb1cad65d7dcd28c811bf6ba8aa6801"
         },
         {
-            "date": 1676976186792,
-            "name": "/opt/iobroker/log/iobroker.2023-02-21.log",
-            "hash": "0bc665339aed3cd36cd23fefacbadbf365d0b0554b79954f640d5dd3870a4769"
+            "date": 1677155490579,
+            "name": "/opt/iobroker/log/iobroker.2023-02-23.log",
+            "hash": "312c6ccbb316d5fe92686ef9c53dfb753bd8dc048a41f038aeadcccc34a3de8d"
+        },
+        {
+            "date": 1677237486313,
+            "name": "/opt/iobroker/log/iobroker.2023-02-24.log",
+            "hash": "44f7ed12060433ea19dd241c1a768f5e8a7175ab1de3674dfa1e0553c88c0ba7"
         }
     ],
     "hashType": "sha256"

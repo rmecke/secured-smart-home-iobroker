@@ -1,2 +1,3 @@
 iobrokerdata/*
 !iobrokerdata/backups/
+!iobrokerdata/backup_latest.tar.gz

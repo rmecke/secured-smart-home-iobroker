@@ -1,8 +1,0 @@
-#!/bin/bash
-if [ "$1" = "fix" ]; then
-curl -sL https://iobroker.net/fix.sh | bash -
-elif [ "$1" = "diag" ]; then
-  sudo -u iobroker curl -sLf https://iobroker.net/diag.sh --output /home/iobroker/.diag.sh && bash /home/iobroker/.diag.sh | sudo -u iobroker tee /home/iobroker/iob_diag.log
-else
-gosu iobroker node /opt/iobroker/node_modules/iobroker.js-controller/iobroker.js "$@"
-fi

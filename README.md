@@ -2,6 +2,13 @@
 
 This repository provides a docker configuration for running ioBroker on a smart home server.
 
+## Restoring the backup
+Although this repository consists of a ready-to-use iobroker service, it is recommended to install the iobroker service by restoring the backup.
+
+In iobrokerdata/backups you find a list of several backups. Copy the most recent backup file into the iobrokerdata directory and on next docker startup, it will be installed.
+
+If the docker container has been started, but you can't access iobroker consider using following workaround: https://github.com/buanet/ioBroker.docker/issues/188
+
 ## Installation
 
 Run ```docker compose up -d --build``` and two container will start: iobroker and wireguard.

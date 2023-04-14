@@ -20,3 +20,7 @@ See https://github.com/bubuntux/nordlynx/issues/81#issuecomment-1163216811 for f
 To check if your VPN Connection works properly, do ```ping 10.13.13.2``` (ping to self) and ```ping 10.13.13.1``` (ping to vpn server) in the iobroker docker terminal.
 There should be a response in both cases.
 Also do ```ping 10.13.13.2``` in the wireguard docker terminal on the vpn server(!) to check, if your vpn server can communicate with the iobroker server.
+
+## Restoring the backup
+
+https://github.com/buanet/ioBroker.docker/issues/188

@@ -20,6 +20,8 @@ services:
       - 8087:8087
       - 1883:1883
       - 8084:8084
+      - 3000:3000 #optional
+      - 3001:3001 #optional
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
     restart: unless-stopped
@@ -33,3 +35,23 @@ services:
     depends_on:
       - wireguard
     network_mode: service:wireguard
+
+  wireshark:
+    image: lscr.io/linuxserver/wireshark:latest
+    container_name: wireshark
+    cap_add:
+      - NET_ADMIN
+    security_opt:
+      - seccomp:unconfined #optional
+    depends_on:
+      - wireguard
+    network_mode: service:wireguard
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - CUSTOM_USER=abc
+      - PASSWORD=abc
+    volumes:
+      - /path/to/config:/config
+    restart: unless-stopped

@@ -16,12 +16,17 @@ services:
       - ./vpn_config:/config
       - /lib/module:/lib/modules
     ports:
-      - 8081:8081
-      - 8087:8087
-      - 1883:1883
-      - 8084:8084
-      - 3000:3000 #optional
-      - 3001:3001 #optional
+      - 8081:8081 # Adapter: Admin
+      - 8087:8087 # Adapter: REST-API
+      - 1883:1883 # Adapter: MQTT
+      - 8883:8883 # Adapter: MQTT (TLS) - Not implemented
+      - 8084:8084 # Adapter: Socket.io
+      - 16021:16021/tcp # Adapter: Nanoleaf
+      - 1900:1900/udp # Adapter: Nanoleaf (Alive-Check)
+      - 5000:5000/udp # Adapter: Nanoleaf (Search device)
+      - 8082:8082 # Adapter: Web
+      - 3000:3000 # Wireshark: Access via http
+      - 3001:3001 # Wireshark: Access via https
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
     restart: unless-stopped

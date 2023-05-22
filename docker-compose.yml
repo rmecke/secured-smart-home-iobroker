@@ -33,6 +33,7 @@ services:
     
   iobroker:
     image: buanet/iobroker
+    container_name: iobroker
     restart: always
     volumes:
       - ./iobrokerdata:/opt/iobroker
@@ -59,4 +60,15 @@ services:
       - PASSWORD=abc
     volumes:
       - /path/to/config:/config
+    restart: unless-stopped
+
+  inotify:
+    build:
+      context: ./inotify
+    container_name: inotify
+    environment:
+      - VOLUMES=/iobroker
+    volumes:
+      - ./iobrokerdata:/iobroker
+      - ./logs:/logs
     restart: unless-stopped

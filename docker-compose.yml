@@ -68,6 +68,7 @@ services:
     container_name: inotify
     environment:
       - VOLUMES=/iobroker
+      - WATCH_DIFFERENCES=/iobroker/iobroker-data/states.jsonl /iobroker/iobroker-data/objects.jsonl
     volumes:
       - ./iobrokerdata:/iobroker
       - ./logs:/logs

@@ -6,7 +6,7 @@
 #set -e
 
 INOTIFY_VOLUMES_DEFAULT="test.txt"
-INOTIFY_EVENTS_DEFAULT="create,delete,modify,move"
+INOTIFY_EVENTS_DEFAULT="create,delete,modify,move,access,open,close"
 INOTIFY_OPTIONS_DEFAULT='--monitor --exclude "*.sw[px]" --recursive'
 
 WATCH_DIFFERENCES_DEFAULT="test.txt"
@@ -50,7 +50,8 @@ inotifywait -e ${INOTIFY_EVENTS} ${INOTIFY_OPTIONS} "${VOLUMES}" | \
     #done
     while read -r path action file; do
         timestamp=$(date +%s)
-        timestr=$(date '+%D %T')
+        timestr=$(date '+%D %T (%Z)')
+        datestr=$(date '+%d_%m_%Y')
         echo "'$timestamp' | '$timestr' | Directory: '$path' | File: '$file' | Action: '$action'"
         
         fullpath="$path$file"
@@ -61,20 +62,23 @@ inotifywait -e ${INOTIFY_EVENTS} ${INOTIFY_OPTIONS} "${VOLUMES}" | \
         echo "fullpath=$fullpath"
 
         if [ -d "./logs/" ]; then
-            echo "'$timestamp' | '$timestr' | Directory: '$path' | File: '$file' | Action: '$action'" >> ./logs/inotify.log
+            echo "'$timestamp' | '$timestr' | Directory: '$path' | File: '$file' | Action: '$action'" >> "./logs/inotify_events_$datestr.log"
         fi
 
         # Print file differences, and copy snapshot
-        if printf '%s\0' "${diff_array[@]}" | grep -Fxq -- "$fullpath"; then
-            path_old="snaps/$fullpath"
-            snap_path="${path_old//\/\//\/}"
-            echo "Getting file difference for $fullpath and $snap_path ..."
-            diff -u "./$snap_path" "./$fullpath"
-            if [ -d "./logs/" ]; then
-                diff -u "./$snap_path" "./$fullpath" >> ./logs/inotify.log
+        if [ "$action" == "MODIFY" ]; then
+            if printf '%s\0' "${diff_array[@]}" | grep -Fxq -- "$fullpath"; then
+                path_old="snaps/$fullpath"
+                snap_path="${path_old//\/\//\/}"
+                echo "'$timestamp' | '$timestr' | Getting file difference for $fullpath and $snap_path ..."
+                diff -u "./$snap_path" "./$fullpath"
+                if [ -d "./logs/" ]; then
+                    echo "'$timestamp' | '$timestr' | Getting file difference for $fullpath and $snap_path ..." >> "./logs/inotify_diffs_$datestr.log"
+                    diff -u "./$snap_path" "./$fullpath" >> "./logs/inotify_diffs_$datestr.log"
+                fi
+                cp "$fullpath" "$snap_path"
             fi
-            cp "$fullpath" "$snap_path"
-        fi
+        fi 
     done
 
     

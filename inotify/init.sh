@@ -5,11 +5,11 @@
 #
 #set -e
 
-INOTIFY_VOLUMES_DEFAULT="test.txt"
+INOTIFY_VOLUMES_DEFAULT=""
 INOTIFY_EVENTS_DEFAULT="create,delete,modify,move,access,open,close"
 INOTIFY_OPTIONS_DEFAULT='--monitor --exclude "*.sw[px]" --recursive'
 
-WATCH_DIFFERENCES_DEFAULT="test.txt"
+WATCH_DIFFERENCES_DEFAULT=""
 
 #
 # Display settings on standard out.

@@ -2,7 +2,8 @@ version: '2'
 
 services:
   wireguard:
-    image: linuxserver/wireguard
+    build:
+      context: ./wireguard
     container_name: wireguard
     hostname: iobroker
     cap_add:
@@ -15,6 +16,7 @@ services:
     volumes:
       - ./vpn_config:/config
       - /lib/module:/lib/modules
+      - ./logs:/logs
     ports:
       - 8081:8081 # Adapter: Admin
       - 8087:8087 # Adapter: REST-API
@@ -30,7 +32,6 @@ services:
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
     restart: unless-stopped
-    
   iobroker:
     image: buanet/iobroker
     container_name: iobroker
@@ -71,5 +72,16 @@ services:
       - WATCH_DIFFERENCES=/iobroker/iobroker-data/states.jsonl /iobroker/iobroker-data/objects.jsonl
     volumes:
       - ./iobrokerdata:/iobroker
+      - ./logs:/logs
+    restart: unless-stopped
+
+  tshark:
+    build:
+      context: ./tshark
+    container_name: tshark
+    depends_on:
+      - wireguard
+    network_mode: service:wireguard
+    volumes:
       - ./logs:/logs
     restart: unless-stopped

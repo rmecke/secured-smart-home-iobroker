@@ -61,6 +61,7 @@ services:
       - PASSWORD=abc
     volumes:
       - /path/to/config:/config
+      - ./logs:/logs
     restart: unless-stopped
 
   inotify:
@@ -81,6 +82,10 @@ services:
     container_name: tshark
     depends_on:
       - wireguard
+    environment:
+      - TSHARK_DURATION=3600
+      - TSHARK_FILES=24
+      - TSHARK_ETH0_FILTER=udp port 51820
     network_mode: service:wireguard
     volumes:
       - ./logs:/logs

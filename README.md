@@ -52,6 +52,24 @@ Also do ```ping 10.13.13.2``` in the wireguard docker terminal on the vpn server
 
 ## Troubleshooting
 
+### Monitoring: Enable cgroups
+
+Edit the /boot/cmdline.txt as following:
+```cgroup_memory=1```
+```cgroup_enable=memory```
+
+sudo nano /boot/cmdline.txt
+// add at the end of the line:
+cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1
+// save file
+
+// will fully restart
+sudo reboot
+
+// check
+docker stats
+
+
 ### Docker on Windows
 
 The default wsl2 kernel is not supporting Wireguard out of the box. A custom kernel has to be built and used in Docker.

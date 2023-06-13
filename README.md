@@ -1,12 +1,20 @@
 # About this repository
 
 This repository provides a docker configuration for running ioBroker on a smart home server. Also it provides useful utilities for forensic readiness.
-The docker configuration consists of 5 images/containers:
+The main docker configuration consists of 5 images/containers (docker-compose.yml):
 - **wireguard**: Enables the VPN-Tunneling through the WireGuard-Protocol. This is needed for a secure connection with the Webservice.
 - **iobroker**: The actual smart home.
 - **wireshark** (optional): Live analysis of network activities. Traffic could be observed from another device in home network via browser.
 - **inotify** (optional): Mass storage logging. File activities related to the iobrokerdata-directory will be catched and written to logfiles.
 - **tshark** (optional): Network logging. Network activities related to the wg0- and eth0-interface will be catched and written to logfiles.
+
+The additional docker configuration consists of 6 images/containers (docker-compose-monitoring.yml):
+- **Grafana** (optional): Visualisation platform for monitoring and logging overview.
+- **Prometheus** (optional): Collect the statistics from Node-Exporter and cAdvisor for later visualisation in Grafana.
+- **Node-Exporter** (optional): Provide hardware/system statistics.
+- **cAdvisor** (optional): Provide docker container statistics.
+- **Loki** (optional): Collect the logging data from Promtail for later visualisation in Grafana.
+- **Promtail** (optional): Retrieve logfiles and provide preprocessed logging data.
 
 ## Installation
 
@@ -43,12 +51,13 @@ Ensure that the following lines exist in the ```./vpn_config/wg0.conf``` [Peer]-
 
 Run ```docker compose up -d --build``` and at least two containers will start: iobroker and wireguard. The other containers are optional.
 
+Run ```docker compose -f docker-compose-monitoring.yml up -d --build``` to start the optional monitoring related containers. These are all optional, according to their additional overhead.
+
 ### Checking VPN-Connection
 
 To check if your VPN Connection works properly, do ```ping 10.13.13.2``` (ping to self) and ```ping 10.13.13.1``` (ping to vpn server) in the iobroker docker terminal.
 There should be a response in both cases.
 Also do ```ping 10.13.13.2``` in the wireguard docker terminal on the vpn server(!) to check, if your vpn server can communicate with the iobroker server.
-
 
 ## Troubleshooting
 

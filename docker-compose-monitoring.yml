@@ -21,6 +21,25 @@ volumes:
 
 # Container services
 services:
+  grafana:
+    # Grafana uses the latest image
+    image: grafana/grafana:latest
+    container_name: grafana
+
+    # Sets user ID to 472
+    user: "472"
+    depends_on:
+      - prometheus
+    ports:
+      - 4000:3000
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards/:/var/lib/grafana/dashboards
+      - ./monitoring/grafana/provisioning/:/etc/grafana/provisioning/
+    env_file:
+      - ./monitoring/grafana/grafana.config
+    restart: always
+
   prometheus:
     # Prometheus uses the latest image
     image: prom/prometheus:latest
@@ -43,25 +62,6 @@ services:
       - 9090:9090
 
     # Restart policy for Prometheus service set to always
-    restart: always
-
-  grafana:
-    # Grafana uses the latest image
-    image: grafana/grafana:latest
-    container_name: grafana
-
-    # Sets user ID to 472
-    user: "472"
-    depends_on:
-      - prometheus
-    ports:
-      - 4000:3000
-    volumes:
-      - grafana_data:/var/lib/grafana
-      - ./monitoring/grafana/dashboards/:/var/lib/grafana/dashboards
-      - ./monitoring/grafana/provisioning/:/etc/grafana/provisioning/
-    env_file:
-      - ./monitoring/grafana/grafana.config
     restart: always
 
   node-exporter:
@@ -92,26 +92,6 @@ services:
     ports:
       - 8080:8080
 
-  promtail:
-    image: grafana/promtail:latest
-    container_name: promtail
-
-    volumes:
-      - ./monitoring/promtail/:/etc/promtail/
-      - promtail_data:/promtail
-      - ./logs:/logs
-
-    command:
-      #- '-inspect'
-      - '--config.file=/etc/promtail/promtail.yml'
-      #- '--config.expand-env=true'
-
-    ports:
-      - 9080:9080
-      - 9097:9097
-
-    restart: unless-stopped
-
   loki:
     image: grafana/loki:2.8.0
     container_name: loki
@@ -124,3 +104,25 @@ services:
     command:
       - '--config.file=/etc/loki/loki.yml'
     restart: unless-stopped
+
+  promtail:
+    image: grafana/promtail:latest
+    container_name: promtail
+
+    volumes:
+      - ./monitoring/promtail/:/etc/promtail/
+      - promtail_data:/promtail
+      - ./logs:/logs
+      - ./iobrokerdata/log:/logs/iobroker
+
+    command:
+      #- '-inspect'
+      - '--config.file=/etc/promtail/promtail.yml'
+      #- '--config.expand-env=true'
+
+    ports:
+      - 9080:9080
+      - 9097:9097
+
+    restart: unless-stopped
+

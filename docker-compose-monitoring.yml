@@ -120,6 +120,9 @@ services:
       - '--config.file=/etc/promtail/promtail.yml'
       #- '--config.expand-env=true'
 
+    depends_on:
+      - loki
+
     ports:
       - 9080:9080
       - 9097:9097

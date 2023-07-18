@@ -18,6 +18,9 @@ The additional docker configuration consists of 6 images/containers (docker-comp
 
 ## Installation
 
+### Adapt the settings inside docker compose file
+Configure the ```docker-compose.yml``` and ```docker-compose-monitoring.yml``` according to the desired setup. Also check, which optional services are necessary and, if admin-credentials are listed in the compose-file, change the credentials to secret ones.
+
 ### Restore the iobroker-backup
 Although this repository consists of a ready-to-use iobroker service, it is recommended to install the iobroker service by restoring the backup.
 
@@ -64,19 +67,11 @@ Also do ```ping 10.13.13.2``` in the wireguard docker terminal on the vpn server
 ### Monitoring: Enable cgroups
 
 Edit the /boot/cmdline.txt as following:
-```cgroup_memory=1```
+```cgroup_enable=cpuset```
 ```cgroup_enable=memory```
+```cgroup_memory=1```.
 
-sudo nano /boot/cmdline.txt
-// add at the end of the line:
-cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1
-// save file
-
-// will fully restart
-sudo reboot
-
-// check
-docker stats
+After that, restart the device with ```sudo reboot```.
 
 
 ### Docker on Windows

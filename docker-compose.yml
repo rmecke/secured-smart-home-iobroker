@@ -83,7 +83,7 @@ services:
     depends_on:
       - wireguard
     environment:
-      - TSHARK_DURATION=3600
+      - TSHARK_DURATION=3600 # seconds, after a new log file should be written
       - TSHARK_FILES=24
       - TSHARK_ETH0_FILTER=udp port 51820
     network_mode: service:wireguard

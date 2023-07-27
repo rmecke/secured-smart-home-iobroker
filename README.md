@@ -56,6 +56,19 @@ Run ```docker compose up -d --build``` and at least two containers will start: i
 
 Run ```docker compose -f docker-compose-monitoring.yml up -d --build``` to start the optional monitoring related containers. These are all optional, according to their additional overhead.
 
+### Adapt the ioBroker configuration
+The default username is: ```admin```. The default password is: ```SecuredSmartHome23```. Please change them in order to provide a secure smart home instance.
+
+Also there are several credentials left out inside the ioBroker instances tab ("x" marks the spot). These are:
+- Cloud: APP-KEY
+- myQ: Username/email
+- myQ: Password
+- Nanoleaf: Authentification token
+- Telegram: Token
+- Vis: License
+If the according functionality is needed, please create your own accounts and/or derive own application keys.
+
+
 ### Checking VPN-Connection
 
 To check if your VPN Connection works properly, do ```ping 10.13.13.2``` (ping to self) and ```ping 10.13.13.1``` (ping to vpn server) in the iobroker docker terminal.

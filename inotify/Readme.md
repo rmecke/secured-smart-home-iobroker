@@ -1,18 +1,14 @@
-# Credits to
+# Credits
 
-https://github.com/pstauffer/docker-curl/tree/master
+https://github.com/pstauffer/docker-curl/tree/master (Original source code)
 
-and 
-
-https://github.com/pstauffer/docker-inotify/tree/master
-
-# Another helpful piece came from
+https://github.com/pstauffer/docker-inotify/tree/master (Original source code)
 
 https://stackoverflow.com/questions/70117645/inotify-on-docker-mounted-volumes-mac-linux
 
 https://stackoverflow.com/questions/3685970/check-if-a-bash-array-contains-a-value
 
-https://gist.github.com/fdob/5983637 --> file differences
+https://gist.github.com/fdob/5983637
 
 # Adaptions
 

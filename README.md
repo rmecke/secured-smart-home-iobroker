@@ -22,7 +22,7 @@ The additional docker configuration consists of 6 images/containers (docker-comp
 Configure the ```docker-compose.yml``` and ```docker-compose-monitoring.yml``` according to the desired setup. Also check, which optional services are necessary and, if admin-credentials are listed in the compose-file, change the credentials to secret ones.
 
 ### Restore the iobroker-backup
-Although this repository consists of a ready-to-use iobroker service, it is recommended to install the iobroker service by restoring the backup.
+It is recommended to install the iobroker service by restoring the backup.
 
 In iobrokerdata/backups you find a list of several backups. Copy the most recent backup file into the iobrokerdata directory and on next docker startup, it will be installed.
 Also delete the backups folder before starting the container.

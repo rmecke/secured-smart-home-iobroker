@@ -66,6 +66,7 @@ Also there are several credentials left out inside the ioBroker instances tab ("
 - Nanoleaf: Authentification token
 - Telegram: Token
 - Vis: License
+
 If the according functionality is needed, please create your own accounts and/or derive own application keys.
 
 
